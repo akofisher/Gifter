@@ -1,0 +1,116 @@
+{
+  "button": {
+    "submit": "Submit",
+    "submitRecover": "to send",
+    "submitRegistration": "Create a profile"
+  },
+  "menuButtons": {
+    "profile": "Profile",
+    "myProducts": "My Products",
+    "aboutus": "About us",
+    "giving": "I will give/exchange",
+    "taking": "I already gave/exchanged",
+    "exchanged": "I have exchanged",
+    "exchanging": "I am changing",
+    "gave": "I gave it to",
+    "gaving": "I give"
+  },
+  "support": {
+    "ifuwant": "If u want to help us..",
+    "copy": "Copy with press"
+  },
+  "emptyProducts": "The items not found",
+  "exchange": {
+    "exchange": "Exchange"
+  },
+  "gifts": {
+    "gifts": "Gifts"
+  },
+  "joined": "Joined us",
+  "news": {
+    "news": "News"
+  },
+  "forms": {
+    "changeDetails": "Change the details",
+    "email": "Email",
+    "fill": "Enter",
+    "lastName": "Last name",
+    "name": "First name",
+    "password": "Password",
+    "phone": "Telephone",
+    "givenGifts": "Gifted",
+    "category": "Category",
+    "add": "Addition",
+    "addPhotos": "Add a photo",
+    "addProduct": "Add the product",
+    "dateofbirth": "Date of birth",
+    "description": "Describe",
+    "exampledescription": "Eg: I will give an old TV",
+    "exampletitle": "E.g. MacBook Air 2018",
+    "exchange": "Exchange",
+    "gave": "Give",
+    "goingto": "I'm going to",
+    "images": "Photos",
+    "title": "Nominate",
+    "confirmPassword": "Repeat the password",
+    "messages": "messages"
+  },
+  "cards": {
+    "changed": "Have changed",
+    "changeing": "Changing",
+    "changes": "Changes",
+    "fully": "Fully",
+    "gifter": "Gifter",
+    "giveing": "Are granted",
+    "given": "Awarded",
+    "published": "Published"
+  },
+  "languages": {
+    "eng": "English",
+    "geo": "Georgian",
+    "rus": "Russian",
+    "changeLanguage": "Languages"
+  },
+  "search": {
+    "search": "Search",
+    "searchProduct": "Search product"
+  },
+  "auth": {
+    "forgetPassword": "Forgot your password?",
+    "haveAccount": "are you registered",
+    "loginTitle": "Authorization",
+    "noAccount": "Not registered?",
+    "recoverSubtitle": "Enter your email and we'll send you a recovery link",
+    "recoverTitle": "password recovery",
+    "registrationSubTitle": "Join Gifter",
+    "registrationTitle": "Registration",
+    "signIn": "log in"
+  },
+  "errors": {
+    "confirmPasswordRequired": "Password confirmation is mandatory",
+    "emailInvalid": "Email is invalid",
+    "emailRequired": "Email is mandatory",
+    "firstNameMax": "The name must be less than 30 characters",
+    "firstNameMin": "The name must be at least 2 characters long",
+    "firstNameRequired": "Name is required",
+    "lastNameMax": "Last name must be less than 30 characters",
+    "lastNameMin": "Last name must be at least 2 characters long",
+    "lastNameRequired": "Last name is mandatory",
+    "passwordMax": "Password is too long",
+    "passwordMin": "Password must be at least 6 characters long",
+    "passwordRequired": "Password is mandatory",
+    "passwordsMustMatch": "Passwords do not match",
+    "phoneInvalid": "The phone number is invalid",
+    "phoneRequired": "Phone number is mandatory"
+  },
+  "modal": {
+    "close": "Close the window",
+    "opened": "The window was opened"
+  },
+  "recover": {
+    "modalErrorText": "The request could not be fulfilled. \nTry again.",
+    "modalErrorTitle": "error",
+    "modalSuccessText": "If the email exists in the system, recovery instructions will be sent to you.",
+    "modalSuccessTitle": "success"
+  }
+}

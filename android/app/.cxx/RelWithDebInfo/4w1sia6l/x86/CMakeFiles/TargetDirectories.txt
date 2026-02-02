@@ -1,0 +1,3 @@
+/Users/akosm3/Gifter/android/app/.cxx/RelWithDebInfo/4w1sia6l/x86/CMakeFiles/appmodules.dir
+/Users/akosm3/Gifter/android/app/.cxx/RelWithDebInfo/4w1sia6l/x86/CMakeFiles/edit_cache.dir
+/Users/akosm3/Gifter/android/app/.cxx/RelWithDebInfo/4w1sia6l/x86/CMakeFiles/rebuild_cache.dir

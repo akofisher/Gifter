@@ -1,0 +1,116 @@
+{
+  "button": {
+    "submit": "Сохранять",
+    "submitRecover": "отправить",
+    "submitRegistration": "Создать профиль"
+  },
+  "menuButtons": {
+    "aboutus": "О нас",
+    "myProducts": "Мои продукты",
+    "profile": "Профиль",
+    "giving": "Я раздаю/обмениваюсь",
+    "taking": "Я раздаль/обменялся",
+    "exchanged": "Я обменялся",
+    "exchanging": "Я меняюсь",
+    "gave": "Я дал это",
+    "gaving": "Я даю"
+  },
+  "support": {
+    "copy": "Копировать с помощью прессы",
+    "ifuwant": "Если ты хочешь нам помочь .."
+  },
+  "emptyProducts": "Продукт не был найден",
+  "exchange": {
+    "exchange": "Обмен"
+  },
+  "gifts": {
+    "gifts": "Подарки"
+  },
+  "joined": "Присоединился к нам",
+  "news": {
+    "news": "Новости"
+  },
+  "forms": {
+    "changeDetails": "Измените детали",
+    "email": "Электронная почта",
+    "fill": "Входить",
+    "lastName": "Фамилия",
+    "name": "Имя",
+    "password": "Пароль",
+    "phone": "Телефон",
+    "givenGifts": "Одаренный",
+    "category": "Категория",
+    "add": "Добавление",
+    "addPhotos": "Добавить фото",
+    "addProduct": "Добавить продукт",
+    "dateofbirth": "Дата рождения",
+    "description": "Описывать",
+    "exampledescription": "Например: я дам старый телевизор",
+    "exampletitle": "Например. MacBook Air 2018",
+    "exchange": "Изменять",
+    "gave": "Давать",
+    "goingto": "Я собираюсь",
+    "images": "Фото",
+    "title": "Выдвигать",
+    "confirmPassword": "Повторите пароль",
+    "messages": "сообщения"
+  },
+  "cards": {
+    "changed": "Изменились",
+    "changeing": "Изменение",
+    "changes": "Изменения",
+    "fully": "Полностью",
+    "gifter": "Подарок",
+    "giveing": "Предоставляются",
+    "given": "Награжден",
+    "published": "Опубликовано"
+  },
+  "languages": {
+    "eng": "Английский",
+    "geo": "Грузинец",
+    "rus": "Русский",
+    "changeLanguage": "Языки"
+  },
+  "search": {
+    "search": "Смотреть",
+    "searchProduct": "Найдите продукт"
+  },
+  "auth": {
+    "forgetPassword": "Забыли пароль?",
+    "haveAccount": "ты зарегистрирован?",
+    "loginTitle": "Авторизация",
+    "noAccount": "Не зарегистрированы?",
+    "recoverSubtitle": "Введите адрес электронной почты, и мы вышлем вам ссылку для восстановления",
+    "recoverTitle": "восстановление пароля",
+    "registrationSubTitle": "Присоединяйтесь к Гифтеру",
+    "registrationTitle": "Регистрация",
+    "signIn": "авторизоваться"
+  },
+  "errors": {
+    "confirmPasswordRequired": "Подтверждение пароля обязательно",
+    "emailInvalid": "Электронная почта недействительна",
+    "emailRequired": "Электронная почта обязательна",
+    "firstNameMax": "Имя должно быть менее 30 символов.",
+    "firstNameMin": "Имя должно быть длиной не менее 2 символов.",
+    "firstNameRequired": "Требуется имя",
+    "lastNameMax": "Фамилия должна содержать менее 30 символов.",
+    "lastNameMin": "Фамилия должна содержать не менее 2 символов.",
+    "lastNameRequired": "Фамилия обязательна",
+    "passwordMax": "Пароль слишком длинный",
+    "passwordMin": "Пароль должен быть длиной не менее 6 символов",
+    "passwordRequired": "Пароль обязателен",
+    "passwordsMustMatch": "Пароли не совпадают",
+    "phoneInvalid": "Номер телефона недействителен",
+    "phoneRequired": "Номер телефона обязателен"
+  },
+  "modal": {
+    "close": "Закройте окно",
+    "opened": "Окно было открыто"
+  },
+  "recover": {
+    "modalErrorText": "Запрос не может быть выполнен. Попробуйте еще раз.",
+    "modalErrorTitle": "ошибка",
+    "modalSuccessText": "Если адрес электронной почты существует в системе, вам будут отправлены инструкции по восстановлению.",
+    "modalSuccessTitle": "успех"
+  }
+}

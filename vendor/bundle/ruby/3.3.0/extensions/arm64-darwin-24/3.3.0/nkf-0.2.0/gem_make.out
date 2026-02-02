@@ -1,0 +1,18 @@
+current directory: /Users/akosm3/Gifter/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+/Users/akosm3/.rbenv/versions/3.3.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/akosm3/Gifter/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250710-40105-i2jrmm sitelibdir\=./.gem.20250710-40105-i2jrmm clean
+
+current directory: /Users/akosm3/Gifter/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250710-40105-i2jrmm sitelibdir\=./.gem.20250710-40105-i2jrmm
+compiling nkf.c
+linking shared-object nkf.bundle
+
+current directory: /Users/akosm3/Gifter/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250710-40105-i2jrmm sitelibdir\=./.gem.20250710-40105-i2jrmm install
+/opt/homebrew/bin/ginstall -c -m 0755 nkf.bundle ./.gem.20250710-40105-i2jrmm
+
+current directory: /Users/akosm3/Gifter/vendor/bundle/ruby/3.3.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250710-40105-i2jrmm sitelibdir\=./.gem.20250710-40105-i2jrmm clean

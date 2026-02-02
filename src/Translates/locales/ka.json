@@ -1,0 +1,140 @@
+{
+  "button": {
+    "submit": "შეცვლა",
+    "submitRegistration": "პროფილის შექმნა",
+    "submitRecover": "გაგზავნა"
+  },
+
+  "errors": {
+    "firstNameRequired": "სახელი სავალდებულოა",
+    "firstNameMin": "სახელი მინიმუმ 2 სიმბოლო უნდა იყოს",
+    "firstNameMax": "სახელი 30 სიმბოლოზე ნაკლები უნდა იყოს",
+
+    "lastNameRequired": "გვარი სავალდებულოა",
+    "lastNameMin": "გვარი მინიმუმ 2 სიმბოლო უნდა იყოს",
+    "lastNameMax": "გვარი 30 სიმბოლოზე ნაკლები უნდა იყოს",
+
+    "phoneRequired": "ტელეფონის ნომერი სავალდებულოა",
+    "phoneInvalid": "ტელეფონის ნომერი არასწორია",
+
+    "emailRequired": "ელ.ფოსტა სავალდებულოა",
+    "emailInvalid": "ელ.ფოსტა არასწორია",
+
+    "passwordRequired": "პაროლი სავალდებულოა",
+    "passwordMin": "პაროლი მინიმუმ 6 სიმბოლო უნდა იყოს",
+    "passwordMax": "პაროლი ძალიან გრძელია",
+
+    "confirmPasswordRequired": "პაროლის დადასტურება სავალდებულოა",
+    "passwordsMustMatch": "პაროლები არ ემთხვევა"
+  },
+
+  "auth": {
+    "registrationTitle": "რეგისტრაცია",
+    "loginTitle": "ავტორიზაცია",
+    "registrationSubTitle": "შემოუერთდი Gifter-ს",
+
+    "recoverTitle": "პაროლის აღდგენა",
+    "recoverSubtitle": "შეიყვანე ელ-ფოსტა და გამოგიგზავნით აღდგენის ბმულს",
+
+    "haveAccount": "ხართ რეგისტრირებული?",
+    "signIn": "შესვლა",
+    "forgetPassword": "დაგავიწყდა პაროლი?",
+    "noAccount": "არ ხარ რეგისტრირებული?"
+  },
+
+  "recover": {
+    "modalSuccessTitle": "წარმატება",
+    "modalSuccessText": "თუ ელ-ფოსტა სისტემაში არსებობს, აღდგენის ინსტრუქცია გამოგიგზავნეთ.",
+    "modalErrorTitle": "შეცდომა",
+    "modalErrorText": "ვერ მოხერხდა მოთხოვნის შესრულება. სცადე თავიდან."
+  },
+
+  "modal": {
+    "opened": "ფანჯარა გაიხსნა",
+    "close": "ფანჯრის დახურვა"
+  },
+
+  "menuButtons": {
+    "aboutus": "ჩვენს შესახებ",
+    "myProducts": "ჩემი პროდუქტები",
+    "profile": "პროფილი",
+    "giving": "მე გავაჩუქებ/გავცვლი",
+    "taking": "მე გავაჩუქე/გავცვალე",
+    "gave": "ვაჩუქე",
+    "exchanged": "გავცვალე",
+    "gaving": "ვაჩუქებ",
+    "exchanging": "ვცვლი"
+  },
+
+  "support": {
+    "copy": "დააკოპირე თითის დადებით",
+    "ifuwant": "თუ გსურს დაგვეხმარო .."
+  },
+
+  "exchange": {
+    "exchange": "გაცვლა"
+  },
+
+  "emptyProducts": "პროდუქტი არ მოიძებნა",
+
+  "news": {
+    "news": "სიახლეები"
+  },
+
+  "gifts": {
+    "gifts": "საჩუქრები"
+  },
+
+  "joined": "შემოგვიერთდა",
+
+  "forms": {
+    "email": "ელ-ფოსტა",
+    "phone": "ტელეფონი",
+    "changeDetails": "შეცვალე დეტალები",
+    "name": "სახელი",
+    "lastName": "გვარი",
+    "password": "პაროლი",
+    "confirmPassword": "გაიმეორე პაროლი",
+    "fill": "შეიყვანე",
+    "givenGifts": "გაჩუქებული",
+    "category": "კატეგორია",
+    "dateofbirth": "დაბადების თარიღი",
+
+    "addProduct": "დაამატე პროდუქტი",
+    "goingto": "ვაპირებ",
+    "gave": "გავაჩუქო",
+    "exchange": "გავცვალო",
+
+    "title": "დასახელება",
+    "description": "აღწერა",
+    "exampletitle": "მაგ: Macbook Air 2018",
+    "exampledescription": "მაგ: გავაჩუქებ ძველ ტელევიზორს",
+    "images": "ფოტოები",
+    "addPhotos": "დაამატე ფოტო",
+    "add": "დამატება",
+    "messages": "შეტყობინებები"
+  },
+
+  "cards": {
+    "published": "გამოქვეყნებულია",
+    "changeing": "იცვლება",
+    "changed": "გაიცვალა",
+    "changes": "ცვლის",
+    "fully": "სრულად",
+    "giveing": "ჩუქდება",
+    "given": "გაჩუქდა",
+    "gifter": "გამჩუქებელი"
+  },
+
+  "languages": {
+    "geo": "ქართული",
+    "eng": "ინგლისური",
+    "rus": "რუსული",
+    "changeLanguage": "ენები"
+  },
+
+  "search": {
+    "searchProduct": "მოძებნე პროდუქტი",
+    "search": "ძებნა"
+  }
+}

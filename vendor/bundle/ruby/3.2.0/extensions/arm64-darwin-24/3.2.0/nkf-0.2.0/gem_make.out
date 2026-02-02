@@ -1,0 +1,19 @@
+current directory: /Users/akosm3/Gifter/vendor/bundle/ruby/3.2.0/gems/nkf-0.2.0/ext/nkf
+/Users/akosm3/.rvm/rubies/ruby-3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/akosm3/Gifter/vendor/bundle/ruby/3.2.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250903-56732-1dcvwt sitelibdir\=./.gem.20250903-56732-1dcvwt clean
+
+current directory: /Users/akosm3/Gifter/vendor/bundle/ruby/3.2.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250903-56732-1dcvwt sitelibdir\=./.gem.20250903-56732-1dcvwt
+compiling nkf.c
+linking shared-object nkf.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/akosm3/Gifter/vendor/bundle/ruby/3.2.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250903-56732-1dcvwt sitelibdir\=./.gem.20250903-56732-1dcvwt install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 nkf.bundle ./.gem.20250903-56732-1dcvwt
+
+current directory: /Users/akosm3/Gifter/vendor/bundle/ruby/3.2.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250903-56732-1dcvwt sitelibdir\=./.gem.20250903-56732-1dcvwt clean

@@ -1,0 +1,1 @@
+/Users/akosm3/Gifter/android/app/build/intermediates/cxx/Debug/y2p694k4/obj/arm64-v8a
