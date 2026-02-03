@@ -11,10 +11,11 @@ import {
 import RNRestart from 'react-native-restart';
 import Profile from '../../../assets/svg/User.svg';
 import { Colors } from '../../Constants/Colors';
-import { User } from '../../Data/Data';
 import Screens, { NavigationParams } from '../../Navigation/Screens';
+import { logoutThunk } from '../../Store/Slices/Auth/Auth.thunks';
 import { setLanguage } from '../../Store/Slices/UiSlice';
 import { useAppDispatch, useAppSelector } from '../../Store/store';
+import { formatDateDDMMYYYY } from '../../Utils/timestamp.util';
 import { getFontSizeByWindowWidth } from '../../Utils/window.util';
 import BackgroundContainer from '../BackgroundContainer/BackgroundContainer';
 import GenericText from '../GenericText/GenericText';
@@ -24,6 +25,7 @@ type Props = {};
 const DrawerContent = (props: Props) => {
   const navigation = useNavigation<NavigationProp<NavigationParams>>();
   const dispatch = useAppDispatch();
+  const User = useAppSelector((s: any) => s?.auth?.user);
 
   const LanguageChange = (lng: string) => {
     dispatch(setLanguage(lng));
@@ -51,6 +53,16 @@ const DrawerContent = (props: Props) => {
       id: 4,
       title: t('menuButtons.aboutus'),
       funct: () => console.log('About us'),
+    },
+    {
+      id: 5,
+      title: t('menuButtons.logOut'),
+      funct: () => dispatch(logoutThunk()),
+    },
+    {
+      id: 6,
+      title: t('menuButtons.logOut'),
+      funct: () => navigation.navigate(Screens.Settings),
     },
   ];
   const LanguageButtons = [
@@ -117,12 +129,12 @@ const DrawerContent = (props: Props) => {
         <View style={{ flexDirection: 'column', paddingHorizontal: 10 }}>
           <GenericText
             textType={'SubTitle'}
-            text={'Levan Tsereteli'}
+            text={`${User?.firstName} ${User?.lastName}`}
             textStyles={{}}
           />
           <GenericText
             textType={'Universal'}
-            text={'10/10/2025'}
+            text={formatDateDDMMYYYY(User?.createdAt)}
             textStyles={{
               fontSize: getFontSizeByWindowWidth(11),
               color: Colors.dark,
@@ -144,11 +156,11 @@ const DrawerContent = (props: Props) => {
             <Text style={styles.menuTitle}>{val?.title}</Text>
             {val?.id == 2 ? (
               <Text style={styles.menuNumber}>
-                {User?.giving} / {User?.exchanging}
+                {User?.stats?.giving} / {User?.stats?.exchanging}
               </Text>
             ) : val?.id == 3 ? (
               <Text style={styles.menuNumber}>
-                {User?.given} / {User?.exchanged}
+                {User?.stats?.given} / {User?.stats?.exchanged}
               </Text>
             ) : null}
           </TouchableOpacity>

@@ -11,6 +11,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import DateTimePickerModal from 'react-native-modal-datetime-picker';
+import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 import Profile from '../../../../assets/svg/User.svg';
 import BackgroundContainer from '../../../ComponentsShared/BackgroundContainer/BackgroundContainer';
@@ -18,10 +20,20 @@ import GenericTextInput from '../../../ComponentsShared/GenericInput/GenericInpu
 import GenericText from '../../../ComponentsShared/GenericText/GenericText';
 import { Colors } from '../../../Constants/Colors';
 import Screens, { NavigationParams } from '../../../Navigation/Screens';
+import { authService } from '../../../Services/api/auth/auth.service';
+import { getDeviceId } from '../../../Services/device/deviceId';
+import { setSession } from '../../../Store/Slices/AuthSlice';
+import {
+  calcAge,
+  formatDDMMYYYY,
+  toISODateOnly,
+} from '../../../Utils/timestamp.util';
 
 const Register = () => {
   const navigation = useNavigation<NavigationProp<NavigationParams>>();
   const scrollRef = useRef<ScrollView>(null);
+  const [dobOpen, setDobOpen] = React.useState(false);
+  const dispatch = useDispatch();
 
   const validationSchema = Yup.object().shape({
     first_name: Yup.string()
@@ -46,6 +58,18 @@ const Register = () => {
       .email(t('errors.emailInvalid'))
       .required(t('errors.emailRequired')),
 
+    dateOfBirth: Yup.string()
+      .required(t('errors.dateOfbirthRequired'))
+      .test(
+        'age',
+        t('errors.ageInvalid') || 'You must be at least 16 years old',
+        value => {
+          if (!value) return false;
+          const age = calcAge(value);
+          return Number.isFinite(age) && age >= 16;
+        },
+      ),
+
     password: Yup.string()
       .trim()
       .min(6, t('errors.passwordMin'))
@@ -65,6 +89,7 @@ const Register = () => {
     email: '',
     password: '',
     confirm_password: '',
+    dateOfBirth: '',
   };
 
   const inputRefs = {
@@ -128,10 +153,27 @@ const Register = () => {
           <Formik
             validationSchema={validationSchema}
             initialValues={initialFormValues}
-            onSubmit={values => {
-              const payload = { ...values };
-              delete (payload as any).confirm_password;
-              console.log('register payload:', payload);
+            onSubmit={async values => {
+              try {
+                const deviceId = await getDeviceId();
+
+                const payload: any = { ...values };
+                delete payload.confirm_password;
+
+                const res = await authService.register({
+                  ...payload,
+                  deviceId,
+                });
+
+                dispatch(
+                  setSession({ accessToken: res.accessToken, user: res.user }),
+                );
+
+                const me = await authService.me();
+                console.log('me:', me.user);
+              } catch (e) {
+                console.log('register error:', e);
+              }
             }}
           >
             {({
@@ -141,9 +183,20 @@ const Register = () => {
               errors,
               touched,
               setFieldTouched,
+              setFieldValue,
+              validateField,
             }) => (
               <>
-                {Object.entries(initialFormValues).map(([key]) => {
+                {(
+                  [
+                    'first_name',
+                    'last_name',
+                    'phone',
+                    'email',
+                    'password',
+                    'confirm_password',
+                  ] as const
+                ).map(key => {
                   const error =
                     touched[key as keyof typeof values] &&
                     errors[key as keyof typeof values];
@@ -201,6 +254,83 @@ const Register = () => {
                     />
                   );
                 })}
+                {/* ✅ Date of birth field (PRESS ONLY, no focus/keyboard) */}
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  onPress={() => {
+                    // Don’t validate here — user hasn’t chosen yet.
+                    // Just open picker.
+                    setDobOpen(true);
+                  }}
+                >
+                  <View pointerEvents="none">
+                    <GenericTextInput
+                      inputType="formInput"
+                      title={t('forms.dateofbirth')}
+                      required
+                      placeHolder={t('forms.chooseDate')}
+                      value={
+                        values.dateOfBirth
+                          ? formatDDMMYYYY(values.dateOfBirth)
+                          : ''
+                      }
+                      onChangeText={() => {}}
+                      errorText={
+                        (touched.dateOfBirth && errors.dateOfBirth) as any
+                      }
+                      icon={Profile}
+                      // @ts-ignore
+                      editable={false}
+                      inputPropedStyle={{ fontSize: 16 }}
+                      textInputPropedContainerStyles={{
+                        borderColor:
+                          touched.dateOfBirth && errors.dateOfBirth
+                            ? Colors.red
+                            : Colors.gray3,
+                      }}
+                      placeHolderColor={Colors.dark}
+                    />
+                  </View>
+                </TouchableOpacity>
+
+                <DateTimePickerModal
+                  isVisible={dobOpen}
+                  mode="date"
+                  maximumDate={new Date()}
+                  minimumDate={new Date(1900, 0, 1)}
+                  date={
+                    values.dateOfBirth
+                      ? new Date(values.dateOfBirth + 'T00:00:00')
+                      : new Date(2000, 0, 1)
+                  }
+                  onConfirm={async date => {
+                    const iso = toISODateOnly(date);
+
+                    setDobOpen(false);
+
+                    // ✅ 1) Set the value (Formik updates are async)
+                    setFieldValue('dateOfBirth', iso);
+
+                    // ✅ 2) Mark as touched so error state updates immediately
+                    setFieldTouched('dateOfBirth', true, false);
+
+                    // ✅ 3) Validate AFTER state has updated (next tick)
+                    setTimeout(() => {
+                      validateField('dateOfBirth');
+                    }, 0);
+                  }}
+                  onCancel={() => {
+                    setDobOpen(false);
+
+                    // ✅ If user cancels without choosing, then show "required"
+                    setFieldTouched('dateOfBirth', true, false);
+
+                    // validate next tick for consistent behavior
+                    setTimeout(() => {
+                      validateField('dateOfBirth');
+                    }, 0);
+                  }}
+                />
 
                 <TouchableOpacity
                   style={styles.submitBtn}

@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 import Profile from '../../../../assets/svg/User.svg';
 import BackgroundContainer from '../../../ComponentsShared/BackgroundContainer/BackgroundContainer';
@@ -18,11 +19,17 @@ import GenericTextInput from '../../../ComponentsShared/GenericInput/GenericInpu
 import GenericText from '../../../ComponentsShared/GenericText/GenericText';
 import { Colors } from '../../../Constants/Colors';
 import Screens, { NavigationParams } from '../../../Navigation/Screens';
+import { getDeviceId } from '../../../Services/device/deviceId';
+import { loginThunk } from '../../../Store/Slices/Auth/Auth.thunks';
+// import { useAppSelector } from '../../../Store/store';
 
 const Login = () => {
   const navigation = useNavigation<NavigationProp<NavigationParams>>();
   const scrollRef = useRef<ScrollView>(null);
+  const dispatch = useDispatch<any>();
   const { t, i18n } = useTranslation();
+  // const User = useAppSelector((s: any) => s?.auth?.user);
+  // console.log('AUTH STATE:', User);
 
   const initialFormValues = {
     email: '',
@@ -100,8 +107,22 @@ const Login = () => {
           <Formik
             validationSchema={validationSchema}
             initialValues={initialFormValues}
-            onSubmit={values => {
-              console.log('login payload:', values);
+            onSubmit={async values => {
+              try {
+                const deviceId = await getDeviceId();
+
+                await dispatch(
+                  loginThunk({
+                    email: values.email,
+                    password: values.password,
+                    deviceId,
+                  }),
+                ).unwrap();
+
+                // ✅ No need to navigate manually if RootNavigation uses isLoggedIn
+              } catch (e) {
+                console.log('login error:', e);
+              }
             }}
           >
             {({

@@ -217,12 +217,12 @@ const styles = StyleSheet.create({
   headerContainer: {
     width: '90%',
     alignSelf: 'center',
-    paddingTop: 20,
+    paddingTop: 40,
   },
   formContainer: {
     paddingBottom: 50,
-    paddingHorizontal: 20,
-    paddingTop: 10,
+    paddingHorizontal: 10,
+    paddingTop: 40,
   },
   submitBtn: {
     width: '90%',

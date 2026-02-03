@@ -17,7 +17,8 @@ enum Screens {
   MyTakingsStack = 'MyTakingsStack',
   MyMessagesStack = 'MyMessagesStack',
   MyMessages = 'MyMessages',
-  MyChat = 'MyChat'
+  MyChat = 'MyChat',
+  Settings = 'Settings'
   //   Catalog = 'Catalog',
   //   Login = 'Login',
   //   Support = 'Support',
@@ -70,6 +71,7 @@ export type NavigationParams = {
   [Screens.MyMessagesStack]: undefined;
   [Screens.MyMessages]: undefined;
   [Screens.MyChat]: undefined;
+  [Screens.Settings]: undefined;
   [Screens.TabStack]: {name: string};
   //   [Screens.ScanType]: {type: 'GIFT' | 'MACHINE' | 'CARD'};
   //   [Screens.ServiceCallSuccess]: undefined;

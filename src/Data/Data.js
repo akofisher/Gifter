@@ -1,19 +1,28 @@
 export const User = {
-  id: '161',
-  first_name: 'Levan',
-  last_name: 'Tsereteli',
-  is_created: '12/12/2025',
-  phone: '557484848',
-  image: 'https://picsum.photos/seed/picsum/200/300',
-  email: 'ako@gmail.com',
-  token: 'tok1231231ok2312331239912731231288323',
-  giving: 8,
-  exchanging: 5,
-  exchanged: 6,
-  given: 4,
-  given_gifts: 12,
-  dateOfBirth: '12/10/1996',
+  _id: "65f2a3c9e1",
+  firstName: "Levan",
+  lastName: "Tsereteli",
+  email: "ako@gmail.com",
+  phone: "+995557484848",
+  dateOfBirth: "1996-10-12",
+  role: "user",
+  isActive: true,
+
+  avatar: {
+    url: "https://picsum.photos/seed/picsum/200/300",
+  },
+
+  stats: {
+    giving: 8,
+    exchanging: 5,
+    exchanged: 6,
+    given: 4,
+  },
+
+  createdAt: "2025-12-12T00:00:00.000Z",
+  updatedAt: "2026-02-02T10:30:00.000Z",
 };
+
 export const Chats = [
   {
     chat_id: '1', // chat with Jack

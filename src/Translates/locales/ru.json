@@ -13,7 +13,8 @@
     "exchanged": "Я обменялся",
     "exchanging": "Я меняюсь",
     "gave": "Я дал это",
-    "gaving": "Я даю"
+    "gaving": "Я даю",
+    "logOut": "Logout"
   },
   "support": {
     "copy": "Копировать с помощью прессы",
@@ -67,7 +68,7 @@
   },
   "languages": {
     "eng": "Английский",
-    "geo": "Грузинец",
+    "geo": "Грузинский",
     "rus": "Русский",
     "changeLanguage": "Языки"
   },

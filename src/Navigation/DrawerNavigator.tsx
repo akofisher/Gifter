@@ -1,6 +1,7 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import React from 'react';
 import DrawerContent from '../ComponentsShared/Drawer/DrawerContent';
+import DevicesScreen from '../Screens/Devices/DevicesScreen';
 import ExchangeScreen from '../Screens/ExchangeScreen/ExchangeScreen';
 import HomeScreen from '../Screens/Home/HomeScreen';
 import ProductsScreen from '../Screens/Products/ProductsScreen';
@@ -72,6 +73,11 @@ const DrawerNavigator = () => {
       <Drawer.Screen
         name={Screens.MyMessagesStack}
         component={MyMessagesStack}
+        options={{ headerShown: false }}
+      />
+      <Drawer.Screen
+        name={Screens.Settings}
+        component={DevicesScreen}
         options={{ headerShown: false }}
       />
     </Drawer.Navigator>

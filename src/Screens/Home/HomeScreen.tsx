@@ -14,6 +14,7 @@ type Props = {};
 
 const HomeScreen = (props: Props) => {
   const navigation = useNavigation<NavigationProp<NavigationParams>>();
+
   return (
     <BackgroundContainer containerStyles={{}}>
       <GenericHeader

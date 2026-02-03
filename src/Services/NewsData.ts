@@ -18,21 +18,24 @@ export interface BlogDataInterface {
   images: string[];
 }
 export interface UserDataInterface {
-  id: number;
-  first_name: string;
-  last_name: string;
-  is_created: string;
-  phone: string;
-  image: string;
+  _id: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  token: string;
-  given_gifts: number;
-  giving: number;
-  given: number;
-  exchanging: number;
-  exchanged: number;
-  dateOfBirth: string;
-}
+  phone?: string;
+  role: 'user' | 'admin';
+  isActive: boolean;
+  avatar?: { url?: string };
+  stats?: {
+    giving: number;
+    exchanging: number;
+    exchanged: number;
+    given: number;
+  };
+  createdAt: string;
+  updatedAt: string;
+};
+
 
 export interface CategoryInterface {
   id: string | number,
