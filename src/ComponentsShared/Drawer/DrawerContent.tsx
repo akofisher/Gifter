@@ -3,6 +3,7 @@ import { t } from 'i18next';
 import React from 'react';
 import {
   Platform,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -125,121 +126,123 @@ const DrawerContent = (props: Props) => {
   ];
   return (
     <BackgroundContainer containerStyles={{}}>
-      <View style={styles.DrawerHeadContainer}>
-        <View style={{ flexDirection: 'column', paddingHorizontal: 10 }}>
-          <GenericText
-            textType={'SubTitle'}
-            text={`${User?.firstName} ${User?.lastName}`}
-            textStyles={{}}
-          />
-          <GenericText
-            textType={'Universal'}
-            text={formatDateDDMMYYYY(User?.createdAt)}
-            textStyles={{
-              fontSize: getFontSizeByWindowWidth(11),
-              color: Colors.dark,
-            }}
-          />
-        </View>
+      <ScrollView>
+        <View style={styles.DrawerHeadContainer}>
+          <View style={{ flexDirection: 'column', paddingHorizontal: 10 }}>
+            <GenericText
+              textType={'SubTitle'}
+              text={`${User?.firstName} ${User?.lastName}`}
+              textStyles={{}}
+            />
+            <GenericText
+              textType={'Universal'}
+              text={formatDateDDMMYYYY(User?.createdAt)}
+              textStyles={{
+                fontSize: getFontSizeByWindowWidth(11),
+                color: Colors.dark,
+              }}
+            />
+          </View>
 
-        <TouchableOpacity>
-          <Profile />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.DrawerBodyContainer}>
-        {DrawerButtons.map((val, idx) => (
-          <TouchableOpacity
-            style={styles.menuButtons}
-            key={idx}
-            onPress={val?.funct}
-          >
-            <Text style={styles.menuTitle}>{val?.title}</Text>
-            {val?.id == 2 ? (
-              <Text style={styles.menuNumber}>
-                {User?.stats?.giving} / {User?.stats?.exchanging}
-              </Text>
-            ) : val?.id == 3 ? (
-              <Text style={styles.menuNumber}>
-                {User?.stats?.given} / {User?.stats?.exchanged}
-              </Text>
-            ) : null}
+          <TouchableOpacity>
+            <Profile />
           </TouchableOpacity>
-        ))}
-        <GenericText
-          textType={'Universal'}
-          text={t('languages.changeLanguage')}
-          textStyles={styles.languageTitle}
-        />
-        {LanguageButtons.map((val, idx) => {
-          const currentLang = useAppSelector(state => state.ui.language);
-          const isSelected = val?.code === currentLang; // assuming val.code is 'ka', 'en', etc.
-
-          return (
+        </View>
+        <View style={styles.DrawerBodyContainer}>
+          {DrawerButtons.map((val, idx) => (
             <TouchableOpacity
+              style={styles.menuButtons}
               key={idx}
               onPress={val?.funct}
-              style={styles.buttonContainer}
             >
-              <View style={styles.radioContainer}>
-                <Text style={[styles.languages]}>{val?.title}</Text>
-                <View
-                  style={[
-                    styles.radioCircle,
-                    { borderColor: isSelected ? Colors.mein : Colors.dark },
-                  ]}
-                >
-                  {isSelected && (
-                    <View
-                      style={[
-                        styles.radioDot,
-                        { backgroundColor: Colors.mein },
-                      ]}
-                    />
-                  )}
-                </View>
-              </View>
-            </TouchableOpacity>
-          );
-        })}
-        <GenericText
-          textType={'Title'}
-          text={t('support.ifuwant')}
-          textStyles={{
-            paddingTop: 20,
-            paddingBottom: 5,
-            color: Colors.mein,
-            marginTop: 10,
-            borderTopWidth: 1,
-            borderTopColor: Colors.gray2,
-          }}
-        />
-        <GenericText
-          textType={'Title'}
-          text={t('support.copy')}
-          textStyles={{
-            paddingVertical: 5,
-            color: Colors.green,
-            marginBottom: 20,
-            fontSize: getFontSizeByWindowWidth(12),
-          }}
-        />
-        <View style={styles.supportContainer}>
-          {SupportButtons.map((val, idx) => (
-            <TouchableOpacity style={styles.flexibleCube}>
-              <GenericText
-                textType={'Universal'}
-                text={val?.title}
-                textStyles={styles.supportTitle}
-              />
-              <GenericText
-                textType={'Universal'}
-                text={val?.address}
-                textStyles={styles.supportAddress}
-              />
+              <Text style={styles.menuTitle}>{val?.title}</Text>
+              {val?.id == 2 ? (
+                <Text style={styles.menuNumber}>
+                  {User?.stats?.giving} / {User?.stats?.exchanging}
+                </Text>
+              ) : val?.id == 3 ? (
+                <Text style={styles.menuNumber}>
+                  {User?.stats?.given} / {User?.stats?.exchanged}
+                </Text>
+              ) : null}
             </TouchableOpacity>
           ))}
+          <GenericText
+            textType={'Universal'}
+            text={t('languages.changeLanguage')}
+            textStyles={styles.languageTitle}
+          />
+          {LanguageButtons.map((val, idx) => {
+            const currentLang = useAppSelector(state => state.ui.language);
+            const isSelected = val?.code === currentLang; // assuming val.code is 'ka', 'en', etc.
+
+            return (
+              <TouchableOpacity
+                key={idx}
+                onPress={val?.funct}
+                style={styles.buttonContainer}
+              >
+                <View style={styles.radioContainer}>
+                  <Text style={[styles.languages]}>{val?.title}</Text>
+                  <View
+                    style={[
+                      styles.radioCircle,
+                      { borderColor: isSelected ? Colors.mein : Colors.dark },
+                    ]}
+                  >
+                    {isSelected && (
+                      <View
+                        style={[
+                          styles.radioDot,
+                          { backgroundColor: Colors.mein },
+                        ]}
+                      />
+                    )}
+                  </View>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
+          <GenericText
+            textType={'Title'}
+            text={t('support.ifuwant')}
+            textStyles={{
+              paddingTop: 20,
+              paddingBottom: 5,
+              color: Colors.mein,
+              marginTop: 10,
+              borderTopWidth: 1,
+              borderTopColor: Colors.gray2,
+            }}
+          />
+          <GenericText
+            textType={'Title'}
+            text={t('support.copy')}
+            textStyles={{
+              paddingVertical: 5,
+              color: Colors.green,
+              marginBottom: 20,
+              fontSize: getFontSizeByWindowWidth(12),
+            }}
+          />
+          <View style={styles.supportContainer}>
+            {SupportButtons.map((val, idx) => (
+              <TouchableOpacity style={styles.flexibleCube}>
+                <GenericText
+                  textType={'Universal'}
+                  text={val?.title}
+                  textStyles={styles.supportTitle}
+                />
+                <GenericText
+                  textType={'Universal'}
+                  text={val?.address}
+                  textStyles={styles.supportAddress}
+                />
+              </TouchableOpacity>
+            ))}
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </BackgroundContainer>
   );
 };

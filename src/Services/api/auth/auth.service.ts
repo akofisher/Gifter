@@ -110,7 +110,11 @@ export const authService = {
   me: () => request.get<MeResponse>('/api/users/me'),
 
   refresh: async () => {
-    const data = await request.post<RefreshResponse>('/api/auth/refresh');
+    const data = await request.post<RefreshResponse>(
+      '/api/auth/refresh',
+      undefined,
+      { skipGlobalError: true },
+    );
     if (data?.accessToken) tokenStore.set(data.accessToken);
     return data;
   },

@@ -472,7 +472,7 @@ const ProfileScreen = () => {
                     }}
                   >
                     <Text style={styles.submitText}>
-                      {deleting ? '...' : 'Delete account'}
+                      {deleting ? '...' : t('button.deleteAccount')}
                     </Text>
                   </TouchableOpacity>
                 </>

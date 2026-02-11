@@ -25,7 +25,9 @@ const App: React.FC = () => {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <GestureHandlerRootView style={{ flex: 1 ,backgroundColor: Colors.gray1, }}>
+      <GestureHandlerRootView
+        style={{ flex: 1, backgroundColor: Colors.gray1 }}
+      >
         <SafeAreaView style={{ backgroundColor: Colors.gray1, flex: 0 }} />
         <SafeAreaView style={{ flex: 1 }}>
           <Provider store={store}>

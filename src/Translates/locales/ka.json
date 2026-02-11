@@ -2,7 +2,8 @@
   "button": {
     "submit": "შეცვლა",
     "submitRegistration": "პროფილის შექმნა",
-    "submitRecover": "გაგზავნა"
+    "submitRecover": "გაგზავნა",
+    "deleteAccount": "ანგარიშის წაშლა"
   },
   "errors": {
     "firstNameRequired": "სახელი სავალდებულოა",

@@ -5,6 +5,7 @@ import { persistReducer, persistStore } from "redux-persist";
 
 import authReducer from "./Slices/AuthSlice";
 import FilterReducer from "./Slices/FilterSlice";
+import globalErrorReducer from "./Slices/GlobalErrorSlice";
 import uiReducer from "./Slices/UiSlice";
 
 // ✅ Persist config ONLY for auth slice
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
   ui: uiReducer,
   filters: FilterReducer,
+  globalError: globalErrorReducer,
 });
 
 // ✅ Root persist config (do NOT persist auth here again)
